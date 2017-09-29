@@ -1,0 +1,19 @@
+{
+  "name": "bastur-front",
+  "version": "1.0.0",
+  "description": "Frontend layer for Basturma application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AvoJFB/bastur-front.git"
+  },
+  "author": "AvoJFB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AvoJFB/bastur-front/issues"
+  },
+  "homepage": "https://github.com/AvoJFB/bastur-front#readme"
+}
