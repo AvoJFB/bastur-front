@@ -8,7 +8,7 @@ const App = () => (
     <AppBar position="static">
       <Toolbar>
         <Typography type="title" color="inherit">
-          Title
+          Basturma
         </Typography>
       </Toolbar>
     </AppBar>
