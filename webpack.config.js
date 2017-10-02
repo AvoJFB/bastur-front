@@ -28,6 +28,14 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'eslint-loader',
       },
+      {
+        test: /\.css?$/,
+        include: [
+          path.resolve(__dirname, 'src'),
+        ],
+        exclude: /node_modules/,
+        loader: 'style-loader!css-loader',
+      },
     ],
   },
   resolve: {
