@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/AvoJFB/bastur-front#readme",
   "dependencies": {
-    "material-ui": "^1.0.0-beta.12",
-    "material-ui-icons": "^1.0.0-beta.10",
+    "axios": "^0.16.2",
+    "material-ui": "^1.0.0-beta.13",
+    "material-ui-icons": "^1.0.0-beta.14",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -30,7 +33,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.7",
-    "eslint": "^4.7.2",
+    "eslint": "^4.8.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",

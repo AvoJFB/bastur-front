@@ -2,7 +2,7 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
-import BasturTable from '../BasturTable';
+import BasturTableContainer from '../../containers/BasturTableContainer';
 import './styles.css';
 
 const App = () => (
@@ -14,7 +14,7 @@ const App = () => (
         </Typography>
       </Toolbar>
     </AppBar>
-    <BasturTable />
+    <BasturTableContainer />
   </div>
 );
 
