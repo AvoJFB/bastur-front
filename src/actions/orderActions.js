@@ -35,7 +35,7 @@ export const getOrdersFailure = error => ({
 export const getOrders = () => (dispatch) => {
   dispatch(getOrdersRequest());
   return axios.get(`${process.env.API_BASE}/order`).then(
-    orders => dispatch(getOrdersSuccess(orders.data.items)),
+    orders => dispatch(getOrdersSuccess(orders.data.orders)),
     error => dispatch(getOrdersFailure(error)),
   );
 };
