@@ -10,7 +10,7 @@ const orderReducer = (state = {
   items: [],
   isFetching: false,
   error: null,
-  orderBy: 'customer',
+  orderBy: 'sold_at',
   order: 'desc',
 }, action) => {
   switch (action.type) {
