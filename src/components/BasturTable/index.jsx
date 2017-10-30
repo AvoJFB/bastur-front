@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import {
   Table,
   TableBody,
@@ -11,6 +12,7 @@ import {
   withStyles,
 } from 'material-ui';
 
+moment.locale('ru');
 const columnData = [
   { id: 'sold_at', numeric: false, label: 'Дата' },
   { id: 'customer', numeric: false, label: 'Заказчик' },
@@ -92,7 +94,7 @@ class BasturTable extends React.Component {
             <TableBody>
               {this.props.orders.items.map(order => (
                 <TableRow hover key={order.id}>
-                  <TableCell>{order.sold_at}</TableCell>
+                  <TableCell>{moment(order.sold_at).format('LL')}</TableCell>
                   <TableCell>{order.customer.name}</TableCell>
                   <TableCell numeric>{order.weight}</TableCell>
                   <TableCell numeric>{order.price_per_kilo}</TableCell>
