@@ -1,15 +1,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import App from './components/App';
-import configureStore from './store/index';
+import Root from './components/Root';
 
-const store = configureStore();
-
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root'),
+ReactDOM.render(<Root />, document.getElementById('root'),
 );
+
+if (module.hot) {
+  module.hot.accept();
+}

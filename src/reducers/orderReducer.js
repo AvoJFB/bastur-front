@@ -1,7 +1,18 @@
-import initialState from '../store/initialState';
-import { SET_ORDER, SET_ORDER_BY } from '../constants/actionTypes';
+import {
+  SET_ORDER,
+  SET_ORDER_BY,
+  GET_ORDERS_REQUEST,
+  GET_ORDERS_SUCCESS,
+  GET_ORDERS_FAILURE,
+} from '../constants/actionTypes';
 
-const orderReducer = (state = initialState, action) => {
+const orderReducer = (state = {
+  items: [],
+  isFetching: false,
+  error: null,
+  orderBy: 'customer',
+  order: 'desc',
+}, action) => {
   switch (action.type) {
     case SET_ORDER_BY:
       return {
@@ -12,6 +23,23 @@ const orderReducer = (state = initialState, action) => {
       return {
         ...state,
         order: action.order,
+      };
+    case GET_ORDERS_REQUEST:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case GET_ORDERS_SUCCESS:
+      return {
+        ...state,
+        items: action.orders,
+        isFetching: false,
+      };
+    case GET_ORDERS_FAILURE:
+      return {
+        ...state,
+        error: action.error,
+        isFetching: false,
       };
     default:
       return state;

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setOrder, setOrderBy } from '../../actions/orderActions';
+import { setOrder, setOrderBy, getOrders } from '../../actions/orderActions';
 import BasturTable from '../../components/BasturTable';
 
 const mapStateToProps = state => ({
@@ -9,6 +9,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onSetOrderBy: orderBy => dispatch(setOrderBy(orderBy)),
   onSetOrder: order => dispatch(setOrder(order)),
+  onGetOrders: () => dispatch(getOrders()),
 });
 
 const BasturTableContainer = connect(

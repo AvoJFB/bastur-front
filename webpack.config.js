@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const config = require('./config');
 
 module.exports = {
   entry: './src/index.js',
@@ -17,6 +19,14 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: ['react', 'es2015', 'stage-0'],
+          plugins: [
+            [
+              'transform-runtime', {
+                polyfill: false,
+                regenerator: true,
+              },
+            ],
+          ],
         },
       },
       {
@@ -45,6 +55,13 @@ module.exports = {
     ],
     extensions: ['.js', '.jsx', '.json', '.css'],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        API_BASE: JSON.stringify(config.API_BASE),
+      },
+    }),
+  ],
   devtool: 'source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
