@@ -6,6 +6,9 @@ import {
   GET_ORDERS_REQUEST,
   GET_ORDERS_SUCCESS,
   GET_ORDERS_FAILURE,
+  CREATE_ORDER_REQUEST,
+  CREATE_ORDER_SUCCESS,
+  CREATE_ORDER_FAILURE,
 } from '../constants/actionTypes';
 
 export const setOrderBy = orderBy => ({
@@ -35,7 +38,29 @@ export const getOrdersFailure = error => ({
 export const getOrders = () => (dispatch) => {
   dispatch(getOrdersRequest());
   return axios.get(`${process.env.API_BASE}/order`).then(
-    orders => dispatch(getOrdersSuccess(orders.data.orders)),
+    res => dispatch(getOrdersSuccess(res.data.orders)),
     error => dispatch(getOrdersFailure(error)),
+  );
+};
+
+export const createOrderRequest = () => ({
+  type: CREATE_ORDER_REQUEST,
+});
+
+export const createOrderSuccess = order => ({
+  type: CREATE_ORDER_SUCCESS,
+  order,
+});
+
+export const createOrderFailure = error => ({
+  type: CREATE_ORDER_FAILURE,
+  error,
+});
+
+export const createOrder = order => (dispatch) => {
+  dispatch(createOrderRequest());
+  return axios.post(`${process.env.API_BASE}/order`, order).then(
+    res => dispatch(createOrderSuccess(res.data.order)),
+    error => dispatch(createOrderFailure(error)),
   );
 };

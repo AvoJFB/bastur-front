@@ -4,6 +4,8 @@ import {
   GET_ORDERS_REQUEST,
   GET_ORDERS_SUCCESS,
   GET_ORDERS_FAILURE,
+  CREATE_ORDER_SUCCESS,
+  CREATE_ORDER_FAILURE,
 } from '../constants/actionTypes';
 
 const orderReducer = (state = {
@@ -36,6 +38,18 @@ const orderReducer = (state = {
         isFetching: false,
       };
     case GET_ORDERS_FAILURE:
+      return {
+        ...state,
+        error: action.error,
+        isFetching: false,
+      };
+    case CREATE_ORDER_SUCCESS:
+      return {
+        ...state,
+        items: [action.order, ...state.items],
+        isFetching: false,
+      };
+    case CREATE_ORDER_FAILURE:
       return {
         ...state,
         error: action.error,

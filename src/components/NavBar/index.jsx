@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Button, AppBar, Toolbar, Typography, withStyles } from 'material-ui';
+import { AppBar, Toolbar, Typography, withStyles } from 'material-ui';
+import NewOrderDialog from '../NewOrderDialog';
 
 const styles = () => ({
   root: {
@@ -21,7 +22,7 @@ const NavBar = (props) => {
           <Typography type="title" color="inherit" className={classes.flex} onClick={() => props.history.push('/')}>
             Basturma
           </Typography>
-          <Button color="contrast" onClick={() => props.history.push('/new')}>Добавить Заказ</Button>
+          <NewOrderDialog />
         </Toolbar>
       </AppBar>
     </div>
