@@ -95,7 +95,7 @@ class BasturTable extends React.Component {
               {this.props.orders.items.map(order => (
                 <TableRow hover key={order.id}>
                   <TableCell>{moment(order.sold_at).format('LL')}</TableCell>
-                  <TableCell>{order.customer.name}</TableCell>
+                  <TableCell>{order.customer_name}</TableCell>
                   <TableCell numeric>{order.weight}</TableCell>
                   <TableCell numeric>{order.price_per_kilo}</TableCell>
                   <TableCell numeric>{order.summary}</TableCell>

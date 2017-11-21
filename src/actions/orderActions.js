@@ -37,8 +37,8 @@ export const getOrdersFailure = error => ({
 
 export const getOrders = () => (dispatch) => {
   dispatch(getOrdersRequest());
-  return axios.get(`${process.env.API_BASE}/order`).then(
-    res => dispatch(getOrdersSuccess(res.data.orders)),
+  return axios.get(`${process.env.API_BASE}/orders/`).then(
+    res => dispatch(getOrdersSuccess(res.data)),
     error => dispatch(getOrdersFailure(error)),
   );
 };
@@ -59,7 +59,7 @@ export const createOrderFailure = error => ({
 
 export const createOrder = order => (dispatch) => {
   dispatch(createOrderRequest());
-  return axios.post(`${process.env.API_BASE}/order`, order).then(
+  return axios.post(`${process.env.API_BASE}/orders/`, order).then(
     res => dispatch(createOrderSuccess(res.data.order)),
     error => dispatch(createOrderFailure(error)),
   );
