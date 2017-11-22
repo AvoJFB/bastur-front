@@ -1,7 +1,7 @@
 export default (values) => {
   const errors = {};
-  if (!values.customer) {
-    errors.customer = 'Required';
+  if (!values.customer_id) {
+    errors.customer_id = 'Required';
   }
   if (!values.weight) {
     errors.weight = 'Required';

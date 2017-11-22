@@ -15,7 +15,7 @@ import {
 moment.locale('ru');
 const columnData = [
   { id: 'sold_at', numeric: false, label: 'Дата' },
-  { id: 'customer', numeric: false, label: 'Заказчик' },
+  { id: 'customer_name', numeric: false, label: 'Заказчик' },
   { id: 'weight', numeric: true, label: 'Вес (кг)' },
   { id: 'price_per_kilo', numeric: true, label: 'Цена за кг' },
   { id: 'summary', numeric: true, label: 'Сумма' },

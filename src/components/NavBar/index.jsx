@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, withStyles } from 'material-ui';
-import NewOrderDialog from '../NewOrderDialog';
+import NewOrderDialogContainer from '../../containers/NewOrderDialogContainer';
 
 const styles = () => ({
   root: {
@@ -22,7 +22,7 @@ const NavBar = (props) => {
           <Typography type="title" color="inherit" className={classes.flex} onClick={() => props.history.push('/')}>
             Basturma
           </Typography>
-          <NewOrderDialog />
+          <NewOrderDialogContainer />
         </Toolbar>
       </AppBar>
     </div>

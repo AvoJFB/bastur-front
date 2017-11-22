@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign,no-param-reassign */
 import React from 'react';
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
@@ -9,6 +10,7 @@ import Dialog, {
 } from 'material-ui/Dialog';
 import { Field, reduxForm } from 'redux-form';
 import validate from './validateOrder';
+import CustomerAutosuggestContainer from '../../containers/CustomerAutosuggestContainer';
 
 const styles = {
   minWidth: '400px',
@@ -85,12 +87,13 @@ class NewOrderDialog extends React.Component {
           ignoreEscapeKeyUp
           open={this.state.open}
           onRequestClose={() => this.handleRequestClose()}
+          onEnter={() => this.props.onGetCustomers()}
         >
           <DialogTitle>Добавить Заказ</DialogTitle>
           <DialogContent style={styles}>
             <form>
               <div>
-                <Field name="customer" label="Заказчик" component={this.renderTextField} />
+                <Field name="customer_id" label="Заказчик" component={this.renderTextField} />
               </div>
               <div>
                 <Field name="weight" label="Вес" component={this.renderTextField} />
